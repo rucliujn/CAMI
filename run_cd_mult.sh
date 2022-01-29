@@ -1,0 +1,5 @@
+python ProductSearch/main_mult.py --train_dir=./tmp_cd_mult/  --data_dir=./tmp_cd_data/min_count5/ --input_train_dir=./tmp_cd_data/min_count5/random_query_split/ --subsampling_rate=0.0001 --window_size=3 --embed_size=200 --mult_size=4 --negative_sample=5 --learning_rate=0.5 --batch_size=64 --max_train_epoch=20 net_struct=fs --rank_cutoff=100  --dynamic_weight=0.3 --L2_lambda=0.005 --steps_per_checkpoint=400
+
+python ProductSearch/main_mult.py --train_dir=./tmp_cd_mult/ --data_dir=./tmp_cd_data/min_count5/ --input_train_dir=./tmp_cd_data/min_count5/random_query_split/ --subsampling_rate=0.0001 --window_size=3 --embed_size=200 --mult_size=4 --negative_sample=5 --learning_rate=0.5 --batch_size=64 --max_train_epoch=20 net_struct=fs --rank_cutoff=100  --dynamic_weight=0.3 --L2_lambda=0.005 --steps_per_checkpoint=400 --decode=True
+
+./galago-3.16-bin/bin/galago eval --judgments= ./tmp_cd_data/min_count5/random_query_split/test.qrels --runs+ ./tmp_cd_mult/test.bias_product.ranklist  --metrics+recip_rank --metrics+ndcg10 --metrics+P10 --metrics+MAP
