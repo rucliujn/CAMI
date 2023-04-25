@@ -45,7 +45,7 @@ tf.app.flags.DEFINE_string("similarity_func", "bias_product", "Select similarity
 tf.app.flags.DEFINE_string("net_struct", "fs", "Specify network structure parameters. Please read readme.txt for details.")
 tf.app.flags.DEFINE_integer("embed_size", 100, "Size of each embedding.")
 tf.app.flags.DEFINE_integer("mult_size", 4, "Size of interest.")
-tf.app.flags.DEFINE_integer("div_lambda", 0.1, "coefficients of the homogenization loss")
+tf.app.flags.DEFINE_float("div_lambda", 0.1, "coefficients of the homogenization loss")
 tf.app.flags.DEFINE_integer("window_size", 5, "Size of context window.")
 tf.app.flags.DEFINE_integer("max_train_epoch", 20,
 							"Limit on the epochs of training (0: no limit).")
